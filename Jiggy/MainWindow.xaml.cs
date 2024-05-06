@@ -94,6 +94,7 @@ namespace Jiggy
         {
             if (btnStartStop.Content.ToString().Equals("Start"))
             {
+                wtoken = new CancellationTokenSource();
                 StartMovingMouse();
                 Application.Current.Dispatcher.Invoke(() => btnStartStop.Content = "Stop");
             }
