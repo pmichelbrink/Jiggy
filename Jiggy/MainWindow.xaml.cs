@@ -106,12 +106,12 @@ namespace Jiggy
         }
         private void StartMovingMouse()
         {
-            task = Task.Run(async () =>  // <- marked async
+            task = Task.Run(async () =>
             {
                 while (true)
                 {
                     MoveMouse();
-                    await Task.Delay(1000, wtoken.Token); // <- await with cancellation
+                    await Task.Delay(60000, wtoken.Token);
                 }
             }, wtoken.Token);
         }
